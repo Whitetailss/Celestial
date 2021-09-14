@@ -4,9 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+// import { configureStore, applyMiddleware, compose } from 'redux';
+import {configureStore} from "@reduxjs/toolkit";
+
+// import thunk from 'react-thunk';
+
+
+import { reducers } from './reducers';
+import './index.css';
+
+// const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
+const store = configureStore({reducer: reducers,  })
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store} >
     <App />
   </Provider>,
   document.getElementById('root')
