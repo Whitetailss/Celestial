@@ -33,8 +33,6 @@ app.use('/posts', postRoutes);
 //   .catch((error) => console.log(`${error} did not connect`));
 
 // mongoose.set('useFindAndModify', false);
-
-
 // MY CHANGES
 
 const CONNECTION_URL = 'mongodb+srv://reactmaster123:react123123@cluster0.sxsba.mongodb.net/reactmaster123?retryWrites=true&w=majority';

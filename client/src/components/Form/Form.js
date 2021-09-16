@@ -4,8 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import useStyles from './styles';
 
-import { createPost } from '../../actions/posts';
-
+import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({currentId, setCurrentId}) => {
 
@@ -24,12 +23,15 @@ const Form = ({currentId, setCurrentId}) => {
         if (currentId === 0) {
             dispatch(createPost(postData));
             clear();
+
         } 
-        
-        // else {
-        //     dispatch()
-        // }
+        else {
+            dispatch(updatePost(currentId, postData));
+            clear();
+        }
     }
+
+  
 
     return (
        <Paper className={classes.paper}>
