@@ -2,9 +2,7 @@ import React from 'react'
 import { Card, CardMedia, Typography, Button, CardContent, CardActions } from '@material-ui/core';
 import moment from 'moment';
 
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-
-
+import MoreHorizIcon from '@material-ui/icons/MoreHorizIcon';
 import { useDispatch } from 'react-redux';
 import useStyles from './styles';
 
