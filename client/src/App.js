@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
-import Typography from '@material-ui/core/Typography'
-import Form from './components/Form/Form';
+import React, {useState, useEffect} from 'react';
+import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
 
+import Form from './components/Form/Form';
+import Post from './components/Posts/Posts';
+import { getPost } from './actions/posts';
 import useStyles from './styles';
-import { Grid, Container } from '@material-ui/core';
+import memories from './images/memories.png'
 
 function App() {
 
@@ -12,14 +15,24 @@ function App() {
   const classes = useStyles();
 
   return (
-    <div className="App">
-      <Typography className={classes.heading} variant="h2" color="initial" align="center"> Celestial </Typography>
-        <Container >
-          <Grid item xs={12} sm={4}>
-            <Form currentId={currentId} setCurrentId={setCurrentId}/>
+    <Container maxWidth="lg">
+      <AppBar className={classes.appBar} position="static" color="inherit">
+        <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
+        <img className={classes.image} src={memories} alt="icon" height="60" />
+      </AppBar>
+      <Grow in>
+        <Container>
+          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+            <Grid item xs={12} sm={7}>
+              <Post setCurrentId={setCurrentId} />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Form currentId={currentId} setCurrentId={setCurrentId} />
+            </Grid>
           </Grid>
         </Container>
-      </div>
+      </Grow>
+    </Container>
       
   );
 }

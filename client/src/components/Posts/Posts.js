@@ -1,28 +1,25 @@
 import React from 'react'
-import { Card, CardMedia, Typography, Button, CardContent, CardActions } from '@material-ui/core';
+import { Card, Typography, Button, CardContent, CardActions, MoreHorizIcon } from '@material-ui/core';
 import moment from 'moment';
 
-import MoreHorizIcon from '@material-ui/icons/MoreHorizIcon';
+// import MoreHoriz from '@material-ui/icons/MoreHoriz';
+
 import { useDispatch } from 'react-redux';
 import useStyles from './styles';
 
 
-
-
 const Post = ({ post, setCurrentId}) => {
-
     const dispatch = useDispatch(); 
     const classes = useStyles();   
-
+    console.log(post)
     return (
         <Card className={classes.card}>
-           
             <div className= {classes.overlay}>
                 <Typography variant="h6"> {post.creator} </Typography>
-                <Typography variant="body2" color="initial">{moment(post.createdAt).fromNow()}</Typography>
+                {/* <Typography variant="body2" color="initial">{moment(post.createdAt).fromNow()}</Typography> */}
             </div>
             <div className={classes.overlay2}>
-                 <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(post._id)}> <MoreHorizIcon fontSize="default"/> </Button>
+                 {/* <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(post._id)}> <MoreHoriz fontSize="default"/> </Button> */}
             </div>
 
              <div className={classes.details}>
@@ -36,10 +33,9 @@ const Post = ({ post, setCurrentId}) => {
                    {/* <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}><ThumbUpAltIcon fontSize="small" /> Like {post.likeCount} </Button>
                    <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}><DeleteIcon fontSize="small" /> Delete</Button> */}
                  </CardActions>
-        </Card>
-      
+        </Card>   
     )
 
 }
 
-Export default Post
+export default Post
