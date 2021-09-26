@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Typography, Button, CardContent, CardActions, MoreHorizIcon } from '@material-ui/core';
+import { Card, Typography, Button, CardContent, CardActions } from '@material-ui/core';
 import moment from 'moment';
 
 // import MoreHoriz from '@material-ui/icons/MoreHoriz';
@@ -11,7 +11,10 @@ import useStyles from './styles';
 const Post = ({ post, setCurrentId}) => {
     const dispatch = useDispatch(); 
     const classes = useStyles();   
-    console.log(post)
+
+    console.log('post', post);
+    console.log('helllooooo');
+
     return (
         <Card className={classes.card}>
             <div className= {classes.overlay}>
@@ -23,7 +26,7 @@ const Post = ({ post, setCurrentId}) => {
             </div>
 
              <div className={classes.details}>
-                 <Typography variant="body2" color="textSecondary" component="h2"> {post.tags.map((tag) => `#${tag} `)} </Typography>
+                 {/* <Typography variant="body2" color="textSecondary" component="h2"> {post.tags.map((tag) => `#${tag} `)} </Typography> */}
              </div>
                  <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
                  <CardContent>
