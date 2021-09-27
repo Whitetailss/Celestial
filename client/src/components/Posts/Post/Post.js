@@ -5,7 +5,7 @@ import moment from 'moment';
 // import MoreHoriz from '@material-ui/icons/MoreHoriz';
 
 import { useDispatch } from 'react-redux';
-import useStyles from './styles';
+import useStyles from '../styles';
 
 
 const Post = ({ post, setCurrentId}) => {
@@ -13,12 +13,10 @@ const Post = ({ post, setCurrentId}) => {
     const classes = useStyles();   
 
     console.log('post', post);
-    console.log('helllooooo');
-
     return (
         <Card className={classes.card}>
             <div className= {classes.overlay}>
-                <Typography variant="h6"> {post.creator} </Typography>
+                {/* <Typography variant="h6"> {post.creator} </Typography> */}
                 {/* <Typography variant="body2" color="initial">{moment(post.createdAt).fromNow()}</Typography> */}
             </div>
             <div className={classes.overlay2}>

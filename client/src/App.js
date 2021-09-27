@@ -3,7 +3,7 @@ import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
 import Form from './components/Form/Form';
-import Post from './components/Posts/Post';
+import Posts from './components/Posts/Posts';
 import { getPosts } from './actions/posts';
 import useStyles from './styles';
 import memories from './images/memories.png'
@@ -18,9 +18,8 @@ function App() {
 
   useEffect(() =>  {
     dispatch(getPosts())}, [ currentId, dispatch]);
+
   
-
-
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
@@ -31,8 +30,8 @@ function App() {
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} sm={7}>
-              <Post/>
-              {/* <Post setCurrentId={setCurrentId}/> */}
+              {/* <Post/> */}
+              <Posts  setCurrentId={setCurrentId}/>
             </Grid>
             <Grid item xs={12} sm={4}>
               <Form currentId={currentId} setCurrentId={setCurrentId} />
