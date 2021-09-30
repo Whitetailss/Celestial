@@ -24,7 +24,7 @@ export const getPosts = () => async (dispatch) => {
     try {
         const data = await api.fetchPosts();
         // const {dataInObject} = await api.fetchPosts();
-        console.log('data', data);
+        // console.log('data', data);
         // console.log('dataInObject', dataInObject);
 
         dispatch({ type: FETCH_ALL, payload: data})
